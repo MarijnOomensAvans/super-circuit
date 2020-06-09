@@ -6,5 +6,9 @@ namespace SuperCircuit.Models
 {
     class AndGate : IGate
     {
+        public void execute()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

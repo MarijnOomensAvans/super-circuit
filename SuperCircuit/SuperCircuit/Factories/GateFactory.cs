@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace SuperCircuit.Models
+namespace SuperCircuit.Factories
 {
-    interface IGate
+    class GateFactory
     {
-        public void execute();
     }
 }

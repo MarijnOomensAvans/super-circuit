@@ -6,5 +6,9 @@ namespace SuperCircuit.Models
 {
     class XOrGate : IGate
     {
+        public void execute()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
