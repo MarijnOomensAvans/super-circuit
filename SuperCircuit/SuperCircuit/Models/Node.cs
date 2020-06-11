@@ -4,7 +4,20 @@ using System.Text;
 
 namespace SuperCircuit.Models
 {
-    class Node
+    public class Node
     {
+        public NodeValue Value { get; set; } = NodeValue.None;
+
+        public List<NodeValue> inputValues = new List<NodeValue>();
+
+        public void Execute(NodeValue value)
+        {
+            if(value == NodeValue.None)
+            {
+                return;
+            }
+
+            inputValues.Add(value);
+        }
     }
 }
