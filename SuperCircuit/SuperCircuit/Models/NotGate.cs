@@ -6,9 +6,17 @@ namespace SuperCircuit.Models
 {
     class NotGate : IGate
     {
-        public void execute()
+        public NodeValue execute(NodeValue inputValue)
         {
-            throw new NotImplementedException();
+            NodeValue value = NodeValue.None;
+
+            if (value == NodeValue.Off)
+            {
+                value = 
+            }
+
+            Value = value;
+            return value;
         }
     }
 }

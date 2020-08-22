@@ -4,11 +4,25 @@ using System.Text;
 
 namespace SuperCircuit.Models
 {
-    class AndGate : IGate
+    class AndGate : IGate, Node
     {
-        public void execute()
+        public NodeValue execute(NodeValue inputValue)
         {
-            throw new NotImplementedException();
+            NodeValue value = NodeValue.None;
+
+            foreach (var node in inputValues)
+            {
+                if (node == NodeValue.On && value != NodeValue.Off)
+                {
+                    value = NodeValue.On;
+                } else
+                {
+                    value = NodeValue.Off;
+                }
+            }
+
+            Value = value;
+            return value;
         }
     }
 }

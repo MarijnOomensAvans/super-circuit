@@ -6,6 +6,6 @@ namespace SuperCircuit.Models
 {
     interface IGate
     {
-        public void execute();
+        public NodeValue execute(NodeValue inputValue);
     }
 }

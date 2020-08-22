@@ -6,9 +6,24 @@ namespace SuperCircuit.Models
 {
     class NorGate : IGate
     {
-        public void execute()
+        public NodeValue execute()
         {
-            throw new NotImplementedException();
+            NodeValue value = NodeValue.None;
+
+            foreach (var node in inputValues)
+            {
+                if (node == NodeValue.On && value != NodeValue.Off)
+                {
+                    value = NodeValue.On;
+                }
+                else
+                {
+                    value = NodeValue.Off;
+                }
+            }
+
+            Value = value;
+            return value;
         }
     }
 }
