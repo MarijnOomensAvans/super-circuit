@@ -1,29 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace SuperCircuit.Models
+﻿namespace SuperCircuit.Models
 {
-    class NorGate : IGate
+    class NorGate : Node
     {
-        public NodeValue execute()
+        public override NodeValue CalculateOutput(NodeValue value)
         {
-            NodeValue value = NodeValue.None;
+            NodeValue nodeValue = NodeValue.None;
 
             foreach (var node in inputValues)
             {
-                if (node == NodeValue.On && value != NodeValue.Off)
+                if (node == NodeValue.On && nodeValue != NodeValue.Off)
                 {
-                    value = NodeValue.On;
+                    nodeValue = NodeValue.On;
                 }
                 else
                 {
-                    value = NodeValue.Off;
+                    nodeValue = NodeValue.Off;
                 }
             }
 
-            Value = value;
-            return value;
+            Value = nodeValue;
+            return nodeValue;
         }
     }
 }

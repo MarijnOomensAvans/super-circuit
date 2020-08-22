@@ -4,25 +4,27 @@ using System.Text;
 
 namespace SuperCircuit.Models
 {
-    class NandGate : IGate, Node
+    class NandGate : Node
     {
-        public NodeValue execute()
+        public override NodeValue CalculateOutput(NodeValue value)
         {
-            NodeValue value = NodeValue.None;
+            NodeValue nodeValue = NodeValue.None;
 
             foreach (var node in inputValues)
             {
-                if (node == NodeValue.On && value != NodeValue.On)
+                if (node == NodeValue.On && nodeValue != NodeValue.On)
                 {
-                    value = NodeValue.Off;
-                } else
+                    nodeValue = NodeValue.Off;
+                }
+                else
                 {
-                    value = NodeValue.On;
+                    nodeValue = NodeValue.On;
                 }
             }
 
-            Value = value;
-            return value;
+            Value = nodeValue;
+            return nodeValue;
         }
+
     }
 }

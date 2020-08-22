@@ -4,11 +4,34 @@ using System.Text;
 
 namespace SuperCircuit.Models
 {
-    class XOrGate : IGate
+    class XOrGate : Node
     {
-        public void execute()
+        public override NodeValue CalculateOutput(NodeValue value)
         {
-            throw new NotImplementedException();
+            NodeValue nodeValue = NodeValue.None;
+            NodeValue valueForHighCurrent = NodeValue.None;
+
+            foreach (var node in inputValues)
+            {
+
+                if (valueForHighCurrent == NodeValue.None)
+                {
+                    valueForHighCurrent = node;
+                    nodeValue = NodeValue.On;
+                }
+                else if (node == valueForHighCurrent && nodeValue == NodeValue.On)
+                {
+                    nodeValue = NodeValue.On;
+                }
+                else
+                {
+                    nodeValue = NodeValue.Off;
+                }
+
+            }
+
+            Value = nodeValue;
+            return nodeValue;
         }
     }
 }

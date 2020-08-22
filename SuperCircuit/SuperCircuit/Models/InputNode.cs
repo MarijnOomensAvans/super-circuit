@@ -2,7 +2,7 @@
 
 namespace SuperCircuit
 {
-    public class InputNode : Node
+    public class InputNode
     {
     }
 }

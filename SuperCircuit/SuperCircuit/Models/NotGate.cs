@@ -1,22 +1,25 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace SuperCircuit.Models
 {
-    class NotGate : IGate
+    class NotGate : Node
     {
-        public NodeValue execute(NodeValue inputValue)
+        public override NodeValue CalculateOutput(NodeValue value)
         {
-            NodeValue value = NodeValue.None;
+            NodeValue nodeValue = NodeValue.None;
 
             if (value == NodeValue.Off)
             {
-                value = 
+                nodeValue = NodeValue.On;
+            }
+            else
+            {
+                nodeValue = NodeValue.Off;
             }
 
-            Value = value;
-            return value;
+            Value = nodeValue;
+            return nodeValue;
         }
+
     }
 }
