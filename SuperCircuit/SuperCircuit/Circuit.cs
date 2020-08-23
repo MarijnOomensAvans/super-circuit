@@ -32,11 +32,6 @@ namespace SuperCircuit
             outputNodes.Add(node);
         }
 
-        public void AddGate()
-        {
-            
-        }
-
         public void StartCircuit()
         {
             foreach (var node in inputNodes)

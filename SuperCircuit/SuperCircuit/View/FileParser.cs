@@ -7,10 +7,9 @@ namespace View
 {
     public class FileParser
     {
-        internal List<string> ReadCircuit()
+        internal List<string> ReadCircuitNodes()
         {
             List<string> circuitDefinitions = new List<string>();
-            Circuit parsedCircuit = new Circuit();
 
             string[] list = new FileReader().ReadFile("Circuit1_FullAdder");
 
@@ -18,6 +17,10 @@ namespace View
             {
                 if (sentence != "")
                 {
+                    if (sentence == "# Description of all the edges")
+                    {
+                        break;
+                    }
                     if(!(sentence[0] == '#'))
                     {
                         circuitDefinitions.Add(sentence);
@@ -26,6 +29,32 @@ namespace View
             }
 
             return circuitDefinitions;
+        }
+
+        internal List<string> ReadCircuitEdges()
+        {
+            List<string> edgeDefinitions = new List<string>();
+
+            string[] list = new FileReader().ReadFile("Circuit1_FullAdder");
+
+            bool isEdge = false;
+
+            foreach (var sentence in list)
+            {
+                if (sentence != "")
+                {
+                    if (sentence == "# Description of all the edges")
+                    {
+                        isEdge = true;
+                    }
+                    if (!(sentence[0] == '#') && isEdge)
+                    {
+                        edgeDefinitions.Add(sentence);
+                    }
+                }
+            }
+
+            return edgeDefinitions;
         }
     }
 }
