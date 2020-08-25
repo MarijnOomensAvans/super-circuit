@@ -1,4 +1,5 @@
 ﻿using SuperCircuit.Models;
+using System;
 using System.Collections.Generic;
 
 namespace SuperCircuit
@@ -38,6 +39,11 @@ namespace SuperCircuit
             {
                 node.Execute(node.Value);
             }
+        }
+
+        internal void AddEdge(string edge)
+        {
+            Console.WriteLine(edge);
         }
     }
 

@@ -4,6 +4,16 @@ namespace SuperCircuit.Models
 {
     public abstract class Node
     {
+        public Node()
+        {
+
+        }
+
+        public Node(string name)
+        {
+            Name = name;
+        }
+
         public NodeValue Value { get; set; } = NodeValue.None;
 
         public List<NodeValue> inputValues = new List<NodeValue>();
@@ -11,6 +21,8 @@ namespace SuperCircuit.Models
         public List<Node> outputNodes = new List<Node>();
 
         public int InputCount = 0;
+
+        public string Name { get; set; }
 
         public abstract NodeValue CalculateOutput(NodeValue value);
 

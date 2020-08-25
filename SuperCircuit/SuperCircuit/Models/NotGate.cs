@@ -4,6 +4,15 @@ namespace SuperCircuit.Models
 {
     class NotGate : Node
     {
+        public NotGate()
+        {
+
+        }
+
+        public NotGate(string name) : base(name)
+        {
+
+        }
         public override NodeValue CalculateOutput(NodeValue value)
         {
             NodeValue nodeValue = NodeValue.None;

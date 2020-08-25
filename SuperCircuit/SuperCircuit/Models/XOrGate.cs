@@ -6,6 +6,15 @@ namespace SuperCircuit.Models
 {
     class XOrGate : Node
     {
+        public XOrGate()
+        {
+
+        }
+
+        public XOrGate(string name) : base(name)
+        {
+
+        }
         public override NodeValue CalculateOutput(NodeValue value)
         {
             NodeValue nodeValue = NodeValue.None;

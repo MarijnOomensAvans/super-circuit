@@ -38,7 +38,6 @@ namespace SuperCircuit
 
         public void Build()
         {
-            this._circuit = new Circuit();
             List<string> circuitText = new FileParser().ReadCircuitNodes();
             foreach (var def in circuitText)
             {
@@ -54,7 +53,7 @@ namespace SuperCircuit
 
         private void AddEdge(string edge)
         {
-            Console.WriteLine(edge);
+            _circuit.AddEdge(edge);
         }
 
         public void AddNode(string definition)
@@ -67,8 +66,6 @@ namespace SuperCircuit
 
             type = type.Replace("\t", String.Empty).Replace(" ", String.Empty);
             name = name.Replace("\t", String.Empty).Replace(" ", String.Empty);
-
-            Console.WriteLine(type);
 
             _circuit.AddNode(_factory.CreateNode(name, type));
         }

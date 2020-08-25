@@ -6,6 +6,15 @@ namespace SuperCircuit.Models
 {
     class NandGate : Node
     {
+        public NandGate()
+        {
+
+        }
+
+        public NandGate(string name) : base(name)
+        {
+
+        }
         public override NodeValue CalculateOutput(NodeValue value)
         {
             NodeValue nodeValue = NodeValue.None;

@@ -5,6 +5,16 @@ namespace SuperCircuit
 {
     public class InputNode : Node
     {
+        public InputNode()
+        {
+
+        }
+
+        public InputNode(string name) : base(name)
+        {
+
+        }
+
         public InputNode(NodeValue value)
         {
             Value = value;

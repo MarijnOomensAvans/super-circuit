@@ -2,6 +2,15 @@
 {
     class OrGate : Node
     {
+        public OrGate()
+        {
+
+        }
+
+        public OrGate(string name) : base(name)
+        {
+
+        }
         public override NodeValue CalculateOutput(NodeValue value)
         {
             NodeValue nodeValue = NodeValue.None;

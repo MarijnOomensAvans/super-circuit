@@ -6,6 +6,15 @@ namespace SuperCircuit.Models
 {
     class AndGate : Node
     {
+        public AndGate()
+        {
+
+        }
+
+        public AndGate(string name) : base(name)
+        {
+
+        }
         public override NodeValue CalculateOutput(NodeValue value)
         {
             NodeValue nodeValue = NodeValue.None;

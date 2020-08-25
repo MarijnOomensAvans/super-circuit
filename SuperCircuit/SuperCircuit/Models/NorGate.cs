@@ -2,6 +2,15 @@
 {
     class NorGate : Node
     {
+        public NorGate()
+        {
+
+        }
+
+        public NorGate(string name) : base(name)
+        {
+
+        }
         public override NodeValue CalculateOutput(NodeValue value)
         {
             NodeValue nodeValue = NodeValue.None;
