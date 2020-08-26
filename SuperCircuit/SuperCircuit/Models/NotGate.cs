@@ -36,5 +36,10 @@ namespace SuperCircuit.Models
             visitor.visit(this);
         }
 
+        public override Node clone(string name)
+        {
+            return new NotGate((Name = name));
+        }
+
     }
 }

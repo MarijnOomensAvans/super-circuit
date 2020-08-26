@@ -27,6 +27,8 @@ namespace SuperCircuit.Models
 
         public string Name { get; set; }
 
+        public abstract Node clone(string name);
+
         public abstract string CalculateOutput(NodeValue value);
 
         public void Execute(NodeValue value)

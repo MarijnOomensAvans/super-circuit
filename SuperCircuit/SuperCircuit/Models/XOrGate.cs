@@ -48,5 +48,10 @@ namespace SuperCircuit.Models
         {
             visitor.visit(this);
         }
+
+        public override Node clone(string name)
+        {
+            return new XOrGate((Name = name));
+        }
     }
 }

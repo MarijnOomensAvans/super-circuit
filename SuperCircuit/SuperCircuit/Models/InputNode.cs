@@ -32,5 +32,10 @@ namespace SuperCircuit
         {
             visitor.visit(this);
         }
+
+        public override Node clone(string name)
+        {
+            return new InputNode((Name = name));
+        }
     }
 }

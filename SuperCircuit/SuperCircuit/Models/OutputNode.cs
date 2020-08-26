@@ -25,5 +25,10 @@ namespace SuperCircuit
         {
             visitor.visit(this);
         }
+
+        public override Node clone(string name)
+        {
+            return new OutputNode((Name = name));
+        }
     }
 }

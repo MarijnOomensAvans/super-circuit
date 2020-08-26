@@ -39,5 +39,10 @@ namespace SuperCircuit.Models
         {
             visitor.visit(this);
         }
+
+        public override Node clone(string name)
+        {
+            return new OrGate((Name = name));
+        }
     }
 }
