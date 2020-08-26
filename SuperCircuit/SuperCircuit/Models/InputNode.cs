@@ -23,9 +23,9 @@ namespace SuperCircuit
             InputCount = 1;
         }
 
-        public override NodeValue CalculateOutput(NodeValue value)
+        public override string CalculateOutput(NodeValue value)
         {
-            return value;
+            return value.getValue();
         }
 
         public override void Accept(HUDVisitor visitor)

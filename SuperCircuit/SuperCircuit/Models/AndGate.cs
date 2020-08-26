@@ -16,24 +16,24 @@ namespace SuperCircuit.Models
         {
 
         }
-        public override NodeValue CalculateOutput(NodeValue value)
+        public override string CalculateOutput(NodeValue value)
         {
-            NodeValue nodeValue = NodeValue.None;
+            NodeValue nodeValue = new NoneValue();
 
             foreach (var node in inputValues)
             {
-                if (node == NodeValue.On && nodeValue != NodeValue.Off)
+                if (node.getValue() == "On" && nodeValue.getValue() != "Off")
                 {
-                    nodeValue = NodeValue.On;
+                    nodeValue = new OnValue();
                 }
                 else
                 {
-                    nodeValue = NodeValue.Off;
+                    nodeValue = new OffValue();
                 }
             }
 
             Value = nodeValue;
-            return nodeValue;
+            return nodeValue.getValue();
         }
          
         public override void Accept(HUDVisitor visitor)

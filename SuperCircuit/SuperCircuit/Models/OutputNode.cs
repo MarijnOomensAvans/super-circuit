@@ -15,10 +15,10 @@ namespace SuperCircuit
         {
 
         }
-        public override NodeValue CalculateOutput(NodeValue value)
+        public override string CalculateOutput(NodeValue value)
         {
             Value = value;
-            return value;
+            return value.getValue();
         }
 
         public override void Accept(HUDVisitor visitor)

@@ -17,7 +17,7 @@ namespace SuperCircuit.Models
 
         public abstract void Accept(HUDVisitor v);
 
-        public NodeValue Value { get; set; } = NodeValue.None;
+        public NodeValue Value { get; set; } = new NoneValue();
 
         public List<NodeValue> inputValues = new List<NodeValue>();
 
@@ -27,11 +27,11 @@ namespace SuperCircuit.Models
 
         public string Name { get; set; }
 
-        public abstract NodeValue CalculateOutput(NodeValue value);
+        public abstract string CalculateOutput(NodeValue value);
 
         public void Execute(NodeValue value)
         {
-            if(value != NodeValue.Off && value != NodeValue.On)
+            if(value.getValue() != "Off" && value.getValue() != "On")
             {
                 return;
             }

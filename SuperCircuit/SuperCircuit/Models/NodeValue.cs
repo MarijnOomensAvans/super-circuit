@@ -1,9 +1,7 @@
 ﻿namespace SuperCircuit.Models
 {
-    public enum NodeValue
+    public interface NodeValue
     {
-        None,
-        Off,
-        On
+        public string getValue();
     }
 }
