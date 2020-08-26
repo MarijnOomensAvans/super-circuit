@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using SuperCircuit.Visitor;
+using System.Collections.Generic;
 
 namespace SuperCircuit.Models
 {
@@ -13,6 +14,8 @@ namespace SuperCircuit.Models
         {
             Name = name;
         }
+
+        public abstract void Accept(HUDVisitor v);
 
         public NodeValue Value { get; set; } = NodeValue.None;
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SuperCircuit.Visitor;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -33,6 +34,11 @@ namespace SuperCircuit.Models
 
             Value = nodeValue;
             return nodeValue;
+        }
+         
+        public override void Accept(HUDVisitor visitor)
+        {
+            visitor.visit(this);
         }
     }
 }

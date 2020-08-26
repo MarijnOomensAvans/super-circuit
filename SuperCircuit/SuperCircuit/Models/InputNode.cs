@@ -1,4 +1,6 @@
 ﻿using SuperCircuit.Models;
+using SuperCircuit.Visitor;
+using System;
 using System.Reflection.Emit;
 
 namespace SuperCircuit
@@ -24,6 +26,11 @@ namespace SuperCircuit
         public override NodeValue CalculateOutput(NodeValue value)
         {
             return value;
+        }
+
+        public override void Accept(HUDVisitor visitor)
+        {
+            visitor.visit(this);
         }
     }
 }

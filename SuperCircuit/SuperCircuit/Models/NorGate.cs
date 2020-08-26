@@ -1,4 +1,7 @@
-﻿namespace SuperCircuit.Models
+﻿using SuperCircuit.Visitor;
+using System;
+
+namespace SuperCircuit.Models
 {
     class NorGate : Node
     {
@@ -29,6 +32,11 @@
 
             Value = nodeValue;
             return nodeValue;
+        }
+
+        public override void Accept(HUDVisitor visitor)
+        {
+            visitor.visit(this);
         }
     }
 }

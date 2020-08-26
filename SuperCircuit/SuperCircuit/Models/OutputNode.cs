@@ -1,4 +1,6 @@
 ﻿using SuperCircuit.Models;
+using SuperCircuit.Visitor;
+using System;
 
 namespace SuperCircuit
 {
@@ -17,6 +19,11 @@ namespace SuperCircuit
         {
             Value = value;
             return value;
+        }
+
+        public override void Accept(HUDVisitor visitor)
+        {
+            visitor.visit(this);
         }
     }
 }
