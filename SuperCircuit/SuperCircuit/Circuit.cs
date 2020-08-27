@@ -10,6 +10,7 @@ namespace SuperCircuit
         public List<Node> nodes = new List<Node>();
         public List<InputNode> inputNodes = new List<InputNode>();
         public List<OutputNode> outputNodes = new List<OutputNode>();
+        public Validator validator = new Validator();
 
         public Circuit()
         {
@@ -44,9 +45,17 @@ namespace SuperCircuit
 
         public void StartCircuit()
         {
-            foreach (var node in inputNodes)
+            if (!validator.Validate(nodes))
             {
-                node.Execute(node.Value.getValue());
+                foreach (var node in inputNodes)
+                {
+                    node.Execute(node.Value.getValue());
+                }
+            }
+            else
+            {
+                Console.WriteLine("Press enter to exit the application.");
+                Console.ReadLine();
             }
         }
 
