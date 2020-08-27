@@ -47,6 +47,10 @@ namespace SuperCircuit
         {
             if (!validator.Validate(nodes))
             {
+                foreach(var node in nodes)
+                {
+                    node.Accept(new Visitor.HUDVisitor());
+                }
                 foreach (var node in inputNodes)
                 {
                     node.Execute(node.Value.getValue());

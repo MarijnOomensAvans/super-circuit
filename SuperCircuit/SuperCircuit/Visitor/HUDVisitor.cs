@@ -12,7 +12,7 @@ namespace SuperCircuit.Visitor
             Console.WriteLine("Selected node: " + node.Name + ". This is an input node. Connected to:");
             foreach (var output in node.outputNodes)
             {
-                Console.WriteLine(node.Name);
+                Console.WriteLine(output.Name);
             }
         }
 

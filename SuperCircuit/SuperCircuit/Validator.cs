@@ -32,7 +32,6 @@ namespace SuperCircuit
                 {
                     if (connections == 2) { continue; }
                     else if (connections == 1 || connections == 0) { hasError = true; Console.WriteLine("Warning, not all nodes are connected."); break; }
-                    else { hasError = true; Console.WriteLine("Warning, an infinite loop was detected."); break; }
                 }
             }
             return hasError;
