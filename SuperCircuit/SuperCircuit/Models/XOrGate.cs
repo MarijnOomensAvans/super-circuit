@@ -18,15 +18,15 @@ namespace SuperCircuit.Models
             this.Name = name;
             this.Value = value;
         }
-        public override string CalculateOutput(NodeValue value)
+        public override string CalculateOutput(string value)
         {
             NodeValue nodeValue = new NoneValue();
-            NodeValue valueForHighCurrent = new NoneValue();
+            string valueForHighCurrent = new NoneValue().getValue();
 
             foreach (var node in inputValues)
             {
 
-                if (valueForHighCurrent == new NoneValue())
+                if (valueForHighCurrent == new NoneValue().getValue())
                 {
                     valueForHighCurrent = node;
                     nodeValue = new OnValue();

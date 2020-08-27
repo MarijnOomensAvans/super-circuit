@@ -18,13 +18,13 @@ namespace SuperCircuit.Models
             this.Name = name;
             this.Value = value;
         }
-        public override string CalculateOutput(NodeValue value)
+        public override string CalculateOutput(string value)
         {
             NodeValue nodeValue = new NoneValue();
 
             foreach (var node in inputValues)
             {
-                if (node.getValue() == "On" && nodeValue.getValue() != "Off")
+                if (node == "On" && nodeValue.getValue() != "Off")
                 {
                     nodeValue = new OnValue();
                 }

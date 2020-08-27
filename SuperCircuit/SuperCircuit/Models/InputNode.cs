@@ -11,6 +11,7 @@ namespace SuperCircuit
         {
             this.Name = name;
             this.Value = value;
+            InputCount = 1;
         }
 
         public InputNode(NodeValue value)
@@ -19,9 +20,9 @@ namespace SuperCircuit
             InputCount = 1;
         }
 
-        public override string CalculateOutput(NodeValue value)
+        public override string CalculateOutput(string value)
         {
-            return value.getValue();
+            return value;
         }
 
         public override void Accept(HUDVisitor visitor)
@@ -31,7 +32,6 @@ namespace SuperCircuit
 
         public override Node clone(string name, NodeValue value)
         {
-            Console.WriteLine(value);
             return new InputNode(name,value);
 
         }

@@ -16,11 +16,11 @@ namespace SuperCircuit.Models
             this.Name = name;
             this.Value = value;
         }
-        public override string CalculateOutput(NodeValue value)
+        public override string CalculateOutput(string value)
         {
             NodeValue nodeValue = new NoneValue();
 
-            if (value.getValue() == "Off")
+            if (value == "Off")
             {
                 nodeValue = new OnValue();
             }

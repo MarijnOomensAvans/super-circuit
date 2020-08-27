@@ -46,7 +46,7 @@ namespace SuperCircuit
         {
             foreach (var node in inputNodes)
             {
-                node.Execute(node.Value);
+                node.Execute(node.Value.getValue());
             }
         }
 

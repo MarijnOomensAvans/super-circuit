@@ -19,7 +19,7 @@ namespace SuperCircuit.Models
 
         public NodeValue Value { get; set; } = new NoneValue();
 
-        public List<NodeValue> inputValues = new List<NodeValue>();
+        public List<string> inputValues = new List<string>();
 
         public List<Node> outputNodes = new List<Node>();
 
@@ -29,11 +29,11 @@ namespace SuperCircuit.Models
 
         public abstract Node clone(string name, NodeValue value);
 
-        public abstract string CalculateOutput(NodeValue value);
+        public abstract string CalculateOutput(string value);
 
-        public void Execute(NodeValue value)
+        public void Execute(string value)
         {
-            if(value.getValue() != "Off" && value.getValue() != "On")
+            if(value != "Off" && value != "On")
             {
                 return;
             }
@@ -42,11 +42,11 @@ namespace SuperCircuit.Models
 
             if (InputCount == inputValues.Count)
             {
-                CalculateOutput(value);
+                var output = CalculateOutput(value);
 
                 foreach (var node in outputNodes)
                 {
-                    node.Execute(value);
+                    node.Execute(output);
                 }
             }
         }

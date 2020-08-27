@@ -17,10 +17,17 @@ namespace SuperCircuit
             this.Value = value;
 
         }
-        public override string CalculateOutput(NodeValue value)
+        public override string CalculateOutput(string value)
         {
-            Value = value;
-            return value.getValue();
+            if (value == "On")
+            {
+                Value = new OnValue();
+            } else
+            {
+                Value = new OffValue();
+            }
+            Console.WriteLine(Name + " -- " + Value.getValue());
+            return value;
         }
 
         public override void Accept(HUDVisitor visitor)
