@@ -40,6 +40,7 @@ namespace SuperCircuit.Models
          
         public override void Accept(HUDVisitor visitor)
         {
+
             visitor.visit(this);
         }
 
