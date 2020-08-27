@@ -36,9 +36,9 @@ namespace SuperCircuit
             _circuit = new Circuit();
         }
 
-        public Circuit Build()
+        public Circuit Build(int input)
         {
-            List<string> circuitText = new FileParser().ReadCircuitNodes();
+            List<string> circuitText = new FileParser().ReadCircuitNodes(input);
             foreach (var def in circuitText)
             {
                 AddNode(def);

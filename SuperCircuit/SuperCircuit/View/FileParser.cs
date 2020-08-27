@@ -7,12 +7,31 @@ namespace View
 {
     public class FileParser
     {
-        internal List<string> ReadCircuitNodes()
+        internal List<string> ReadCircuitNodes(int input)
         {
             List<string> circuitDefinitions = new List<string>();
+            string[] list;
 
-            string[] list = new FileReader().ReadFile("Circuit1_FullAdder");
-
+            if (input == 1)
+            {
+                list = new FileReader().ReadFile("Circuit1_FullAdder");
+            }
+            else if (input == 2)
+            {
+                list = new FileReader().ReadFile("Circuit2_Decoder");
+            }
+            else if (input == 3)
+            {
+                list = new FileReader().ReadFile("Circuit3_Encoder");
+            }
+            else if (input == 4)
+            {
+                list = new FileReader().ReadFile("Circuit4_InfiniteLoop");
+            }
+            else
+            {
+                list = new FileReader().ReadFile("Circuit5_NotConnected");
+            }
             foreach (var sentence in list)
             {
                 if (sentence != "")
@@ -21,7 +40,7 @@ namespace View
                     {
                         break;
                     }
-                    if(!(sentence[0] == '#'))
+                    if (!(sentence[0] == '#'))
                     {
                         circuitDefinitions.Add(sentence);
                     }

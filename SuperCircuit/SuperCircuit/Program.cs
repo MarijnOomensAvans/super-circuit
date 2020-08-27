@@ -6,8 +6,7 @@ namespace SuperCircuit
     {
         static void Main(string[] args)
         {
-            var circuit = new CircuitBuilder().Build();
-            circuit.StartCircuit();
+            new CircuitManager();
         }
     }
 }
