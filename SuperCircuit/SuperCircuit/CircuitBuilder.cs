@@ -18,8 +18,8 @@ namespace SuperCircuit
 
             Dictionary<string, Node> _types = new Dictionary<string, Node>()
             {
-                    {"INPUT_HIGH", new InputNode(NodeValue.On) },
-                    {"INPUT_LOW", new InputNode(NodeValue.Off) },
+                    {"INPUT_HIGH", new InputNode(new OnValue()) },
+                    {"INPUT_LOW", new InputNode(new OffValue()) },
                     {"PROBE", new OutputNode() },
                     {"OR", new OrGate() },
                     {"NOR", new NorGate() },
@@ -36,7 +36,7 @@ namespace SuperCircuit
             _circuit = new Circuit();
         }
 
-        public void Build()
+        public Circuit Build()
         {
             List<string> circuitText = new FileParser().ReadCircuitNodes();
             foreach (var def in circuitText)
@@ -49,6 +49,7 @@ namespace SuperCircuit
             {
                 AddEdge(edge);
             }
+            return _circuit;
         }
 
         private void AddEdge(string edge)

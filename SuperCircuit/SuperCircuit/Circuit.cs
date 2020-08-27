@@ -1,6 +1,7 @@
 ﻿using SuperCircuit.Models;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace SuperCircuit
 {
@@ -19,6 +20,14 @@ namespace SuperCircuit
 
         public void AddNode(Node node)
         {
+            if (node is InputNode)
+            {
+                inputNodes.Add((InputNode) node);
+            }
+            if (node is OutputNode)
+            {
+                outputNodes.Add((OutputNode) node);
+            }
             nodes.Add(node);
         }
 
@@ -43,7 +52,18 @@ namespace SuperCircuit
 
         internal void AddEdge(string edge)
         {
-            Console.WriteLine(edge);
+            var nodeString = edge.Split(":")[0];
+
+            var node = nodes.Where(n => n.Name == nodeString).First();
+
+            var after = nodeString = edge.Split(":")[1].TrimStart(new char[] { '\t' }).TrimEnd(new char[] { ';' });
+
+            var connectedNodes = after.Split(",");
+
+            foreach (var afterNode in connectedNodes)
+            {
+                node.AddOutput(this.nodes.Where(n => n.Name == afterNode).First());
+            }
         }
     }
 

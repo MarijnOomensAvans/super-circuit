@@ -8,7 +8,7 @@ namespace SuperCircuit.Models
     {
         public string getValue()
         {
-            return "On"
+            return "On";
         }
     }
 }
