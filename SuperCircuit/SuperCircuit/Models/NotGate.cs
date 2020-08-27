@@ -28,8 +28,8 @@ namespace SuperCircuit.Models
             {
                 nodeValue = new OffValue();
             }
-
             Value = nodeValue;
+            Console.WriteLine(Name + " -- " + Value.getValue());
             return nodeValue.getValue();
         }
 

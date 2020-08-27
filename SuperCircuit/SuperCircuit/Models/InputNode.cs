@@ -22,6 +22,7 @@ namespace SuperCircuit
 
         public override string CalculateOutput(string value)
         {
+            Console.WriteLine(Name + " -- " + Value.getValue());
             return value;
         }
 

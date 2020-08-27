@@ -27,8 +27,10 @@ namespace SuperCircuit.Models
 
         public string Name { get; set; }
 
+        //prototype, the class itself knows how to build itself
         public abstract Node clone(string name, NodeValue value);
 
+        //this is a method using the template pattern
         public abstract string CalculateOutput(string value);
 
         public void Execute(string value)

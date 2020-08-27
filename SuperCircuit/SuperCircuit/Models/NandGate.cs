@@ -33,8 +33,8 @@ namespace SuperCircuit.Models
                     nodeValue = new OnValue();
                 }
             }
-
             Value = nodeValue;
+            Console.WriteLine(Name + " -- " + Value.getValue());
             return nodeValue.getValue();
         }
 

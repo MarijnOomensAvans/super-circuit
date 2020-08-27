@@ -27,6 +27,7 @@ namespace SuperCircuit
                 Value = new OffValue();
             }
             Console.WriteLine(Name + " -- " + Value.getValue());
+            Console.WriteLine(Name + " has finished with status " + Value.getValue());
             return value;
         }
 
