@@ -3,7 +3,7 @@ using System;
 
 namespace SuperCircuit.Models
 {
-    class NorGate : Node
+    public class NorGate : Node
     {
 
         public NorGate()

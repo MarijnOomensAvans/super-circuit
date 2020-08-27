@@ -3,7 +3,7 @@ using System;
 
 namespace SuperCircuit.Models
 {
-    class OrGate : Node
+    public class OrGate : Node
     {
 
         public OrGate()

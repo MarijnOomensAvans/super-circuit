@@ -5,7 +5,7 @@ using System.Text;
 
 namespace SuperCircuit.Models
 {
-    class NandGate : Node
+    public class NandGate : Node
     {
 
         public NandGate()

@@ -3,7 +3,7 @@ using System;
 
 namespace SuperCircuit.Models
 {
-    class NotGate : Node
+    public class NotGate : Node
     {
 
         public NotGate()

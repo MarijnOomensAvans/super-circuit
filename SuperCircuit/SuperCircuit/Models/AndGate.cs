@@ -5,7 +5,7 @@ using System.Text;
 
 namespace SuperCircuit.Models
 {
-    class AndGate : Node
+    public class AndGate : Node
     {
 
         public AndGate()

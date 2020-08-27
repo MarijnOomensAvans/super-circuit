@@ -5,7 +5,7 @@ using System.Text;
 
 namespace SuperCircuit.Models
 {
-    class XOrGate : Node
+    public class XOrGate : Node
     {
 
         public XOrGate()
