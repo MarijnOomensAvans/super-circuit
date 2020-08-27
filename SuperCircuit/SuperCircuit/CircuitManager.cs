@@ -6,6 +6,8 @@ namespace SuperCircuit
 {
     public class CircuitManager
     {
+
+        public bool valid = true;
         public CircuitManager()
         {
             this.getInput();
@@ -13,32 +15,33 @@ namespace SuperCircuit
 
         private void getInput()
         {
-            Console.WriteLine("Please select a circuit");
             int input;
-            bool valid = false;
-            do
-            {
+            while (valid) { 
+            Console.WriteLine("Please select a circuit");
                 char x = GetKey();
                 string newInput = "" + x;
-                valid = int.TryParse(newInput, out input);
-            } while (!valid);
-            var circuit = new CircuitBuilder().Build(input);
-            circuit.StartCircuit();
-
+                bool key = int.TryParse(newInput, out input);
+                var circuit = new CircuitBuilder().Build(input);
+                circuit.StartCircuit();
+            }
         }
 
         public char GetKey()
         {
             char x = 'x';
             ConsoleKeyInfo input;
-            while (x != '1' && x != '2' && x != '3' && x != '4' && x != '5')
+            while (x != '1' && x != '2' && x != '3' && x != '4' && x != '5' && x != (char)13)
             {
                 input = Console.ReadKey();
                 x = input.KeyChar;
                 Console.WriteLine();
-                if (x != '1' && x != '2' && x != '3' && x != '4' && x != '5')
+                if (x != '1' && x != '2' && x != '3' && x != '4' && x != '5' && x != (char)13)
                 {
                     Console.WriteLine("Please type 1,2,3,4 or 5");
+                }
+                if (x == (char)13)
+                {
+                    System.Environment.Exit(1);
                 }
             }
             return x;
