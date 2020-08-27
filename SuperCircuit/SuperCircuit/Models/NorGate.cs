@@ -5,14 +5,16 @@ namespace SuperCircuit.Models
 {
     class NorGate : Node
     {
+
         public NorGate()
         {
 
         }
 
-        public NorGate(string name) : base(name)
+        public NorGate(string name, NodeValue value) : base(name)
         {
-
+            this.Name = name;
+            this.Value = value;
         }
         public override string CalculateOutput(NodeValue value)
         {
@@ -39,9 +41,9 @@ namespace SuperCircuit.Models
             visitor.visit(this);
         }
 
-        public override Node clone(string name)
+        public override Node clone(string name, NodeValue value)
         {
-            return new NorGate((Name = name));
+            return new NorGate(name, value);
         }
     }
 }

@@ -7,14 +7,10 @@ namespace SuperCircuit
 {
     public class InputNode : Node
     {
-        public InputNode()
+        public InputNode(string name, NodeValue value) : base(name)
         {
-
-        }
-
-        public InputNode(string name) : base(name)
-        {
-
+            this.Name = name;
+            this.Value = value;
         }
 
         public InputNode(NodeValue value)
@@ -33,9 +29,11 @@ namespace SuperCircuit
             visitor.visit(this);
         }
 
-        public override Node clone(string name)
+        public override Node clone(string name, NodeValue value)
         {
-            return new InputNode((Name = name));
+            Console.WriteLine(value);
+            return new InputNode(name,value);
+
         }
     }
 }

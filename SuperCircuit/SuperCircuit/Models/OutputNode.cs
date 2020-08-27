@@ -6,13 +6,15 @@ namespace SuperCircuit
 {
     public class OutputNode : Node
     {
+
         public OutputNode()
         {
-
         }
 
-        public OutputNode(string name) : base(name)
+        public OutputNode(string name, NodeValue value) : base(name)
         {
+            this.Name = name;
+            this.Value = value;
 
         }
         public override string CalculateOutput(NodeValue value)
@@ -26,9 +28,9 @@ namespace SuperCircuit
             visitor.visit(this);
         }
 
-        public override Node clone(string name)
+        public override Node clone(string name, NodeValue value)
         {
-            return new OutputNode((Name = name));
+            return new OutputNode(name, value);
         }
     }
 }

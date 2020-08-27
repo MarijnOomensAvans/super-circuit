@@ -5,14 +5,16 @@ namespace SuperCircuit.Models
 {
     class OrGate : Node
     {
+
         public OrGate()
         {
 
         }
 
-        public OrGate(string name) : base(name)
+        public OrGate(string name, NodeValue value) : base(name)
         {
-
+            this.Name = name;
+            this.Value = value;
         }
         public override string CalculateOutput(NodeValue value)
         {
@@ -40,9 +42,9 @@ namespace SuperCircuit.Models
             visitor.visit(this);
         }
 
-        public override Node clone(string name)
+        public override Node clone(string name, NodeValue value)
         {
-            return new OrGate((Name = name));
+            return new OrGate(name, value);
         }
     }
 }

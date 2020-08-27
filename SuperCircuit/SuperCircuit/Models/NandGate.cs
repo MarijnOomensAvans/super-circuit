@@ -7,14 +7,16 @@ namespace SuperCircuit.Models
 {
     class NandGate : Node
     {
+
         public NandGate()
         {
 
         }
 
-        public NandGate(string name) : base(name)
+        public NandGate(string name, NodeValue value) : base(name)
         {
-
+            this.Name = name;
+            this.Value = value;
         }
         public override string CalculateOutput(NodeValue value)
         {
@@ -41,9 +43,9 @@ namespace SuperCircuit.Models
             visitor.visit(this);
         }
 
-        public override Node clone(string name)
+        public override Node clone(string name, NodeValue value)
         {
-            return new AndGate((Name = name));
+            return new AndGate(name, value);
         }
 
     }

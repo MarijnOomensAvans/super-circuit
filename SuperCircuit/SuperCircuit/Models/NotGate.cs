@@ -5,14 +5,16 @@ namespace SuperCircuit.Models
 {
     class NotGate : Node
     {
+
         public NotGate()
         {
 
         }
 
-        public NotGate(string name) : base(name)
+        public NotGate(string name, NodeValue value) : base(name)
         {
-
+            this.Name = name;
+            this.Value = value;
         }
         public override string CalculateOutput(NodeValue value)
         {
@@ -36,9 +38,9 @@ namespace SuperCircuit.Models
             visitor.visit(this);
         }
 
-        public override Node clone(string name)
+        public override Node clone(string name, NodeValue value)
         {
-            return new NotGate((Name = name));
+            return new NotGate(name,value);
         }
 
     }
