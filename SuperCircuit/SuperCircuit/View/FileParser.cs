@@ -50,11 +50,32 @@ namespace View
             return circuitDefinitions;
         }
 
-        internal List<string> ReadCircuitEdges()
+        internal List<string> ReadCircuitEdges(int input)
         {
             List<string> edgeDefinitions = new List<string>();
 
-            string[] list = new FileReader().ReadFile("Circuit1_FullAdder");
+            string[] list;
+
+            if (input == 1)
+            {
+                list = new FileReader().ReadFile("Circuit1_FullAdder");
+            }
+            else if (input == 2)
+            {
+                list = new FileReader().ReadFile("Circuit2_Decoder");
+            }
+            else if (input == 3)
+            {
+                list = new FileReader().ReadFile("Circuit3_Encoder");
+            }
+            else if (input == 4)
+            {
+                list = new FileReader().ReadFile("Circuit4_InfiniteLoop");
+            }
+            else
+            {
+                list = new FileReader().ReadFile("Circuit5_NotConnected");
+            }
 
             bool isEdge = false;
 

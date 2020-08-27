@@ -39,12 +39,13 @@ namespace SuperCircuit
         public Circuit Build(int input)
         {
             List<string> circuitText = new FileParser().ReadCircuitNodes(input);
+         
             foreach (var def in circuitText)
             {
                 AddNode(def);
             }
 
-            List<string> curcuitEdges = new FileParser().ReadCircuitEdges();
+            List<string> curcuitEdges = new FileParser().ReadCircuitEdges(input);
             foreach (var edge in curcuitEdges)
             {
                 AddEdge(edge);
