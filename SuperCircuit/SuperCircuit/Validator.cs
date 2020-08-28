@@ -13,14 +13,15 @@ namespace SuperCircuit
             bool hasError = false;
             foreach (Node currentNode in nodeList)
             {
-            foreach(Node node in currentNode.outputNodes)
+                foreach (Node node in currentNode.outputNodes)
                 {
-                    foreach(Node connectedNode in node.outputNodes) {
-                        foreach(Node connected2Node in connectedNode.outputNodes)
+                    foreach (Node connectedNode in node.outputNodes)
+                    {
+                        foreach (Node connected2Node in connectedNode.outputNodes)
                         {
-                            foreach(Node NullNode in connected2Node.outputNodes)
+                            foreach (Node NullNode in connected2Node.outputNodes)
                             {
-                                if(NullNode == currentNode)
+                                if (NullNode == currentNode)
                                 {
                                     hasError = true; Console.WriteLine("Warning, infinte loop!."); break;
                                 }
