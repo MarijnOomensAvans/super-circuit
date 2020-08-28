@@ -7,14 +7,14 @@ namespace SuperCircuit
 {
     public class InputNode : Node
     {
-        public InputNode(string name, NodeValue value) : base(name)
+        public InputNode(string name, INodeValue value) : base(name)
         {
             this.Name = name;
             this.Value = value;
             InputCount = 1;
         }
 
-        public InputNode(NodeValue value)
+        public InputNode(INodeValue value)
         {
             Value = value;
             InputCount = 1;
@@ -22,16 +22,16 @@ namespace SuperCircuit
 
         public override string CalculateOutput(string value)
         {
-            Console.WriteLine(Name + " -- " + Value.getValue());
+            Console.WriteLine(Name + " -- " + Value.GetValue());
             return value;
         }
 
         public override void Accept(HUDVisitor visitor)
         {
-            visitor.visit(this);
+            visitor.Visit(this);
         }
 
-        public override Node clone(string name, NodeValue value)
+        public override Node Clone(string name, INodeValue value)
         {
             return new InputNode(name,value);
 

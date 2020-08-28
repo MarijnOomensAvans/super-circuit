@@ -32,7 +32,7 @@ namespace SuperCircuit
             nodes.Add(node);
         }
 
-        public void AddInputNode(InputNode node, NodeValue value)
+        public void AddInputNode(InputNode node, INodeValue value)
         {
             node.Value = value;
             inputNodes.Add(node);
@@ -53,7 +53,7 @@ namespace SuperCircuit
                 }
                 foreach (var node in inputNodes)
                 {
-                    node.Execute(node.Value.getValue());
+                    node.Execute(node.Value.GetValue());
                 }
             }
             else

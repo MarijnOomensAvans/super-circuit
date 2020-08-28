@@ -17,7 +17,7 @@ namespace NUnitTestProject1
             string input = "On";
             string expected = "On";
             AndGate node = new AndGate();
-            node.inputValues.Add(new OnValue().getValue());
+            node.inputValues.Add(new OnValue().GetValue());
 
             string output = node.CalculateOutput(input);
 
@@ -30,7 +30,7 @@ namespace NUnitTestProject1
             string input = "On";
             string expected = "Off";
             AndGate node = new AndGate();
-            node.inputValues.Add(new OffValue().getValue());
+            node.inputValues.Add(new OffValue().GetValue());
 
             string output = node.CalculateOutput(input);
 
@@ -43,7 +43,7 @@ namespace NUnitTestProject1
             string input = "On";
             string expected = "On";
             NandGate node = new NandGate();
-            node.inputValues.Add(new OnValue().getValue());
+            node.inputValues.Add(new OnValue().GetValue());
 
             string output = node.CalculateOutput(input);
 
@@ -56,7 +56,7 @@ namespace NUnitTestProject1
             string input = "Off";
             string expected = "Off";
             NandGate node = new NandGate();
-            node.inputValues.Add(new OffValue().getValue());
+            node.inputValues.Add(new OffValue().GetValue());
 
             string output = node.CalculateOutput(input);
 
@@ -69,7 +69,7 @@ namespace NUnitTestProject1
             string input = "On";
             string expected = "On";
             NorGate node = new NorGate();
-            node.inputValues.Add(new OnValue().getValue());
+            node.inputValues.Add(new OnValue().GetValue());
 
             string output = node.CalculateOutput(input);
 
@@ -82,7 +82,7 @@ namespace NUnitTestProject1
             string input = "Off";
             string expected = "Off";
             NorGate node = new NorGate();
-            node.inputValues.Add(new OffValue().getValue());
+            node.inputValues.Add(new OffValue().GetValue());
 
             string output = node.CalculateOutput(input);
 
@@ -95,7 +95,7 @@ namespace NUnitTestProject1
             string input = "On";
             string expected = "Off";
             NotGate node = new NotGate();
-            node.inputValues.Add(new OnValue().getValue());
+            node.inputValues.Add(new OnValue().GetValue());
 
             string output = node.CalculateOutput(input);
 
@@ -108,7 +108,7 @@ namespace NUnitTestProject1
             string input = "Off";
             string expected = "On";
             NotGate node = new NotGate();
-            node.inputValues.Add(new OffValue().getValue());
+            node.inputValues.Add(new OffValue().GetValue());
 
             string output = node.CalculateOutput(input);
 
@@ -121,7 +121,7 @@ namespace NUnitTestProject1
             string input = "On";
             string expected = "On";
             OrGate node = new OrGate();
-            node.inputValues.Add(new OnValue().getValue());
+            node.inputValues.Add(new OnValue().GetValue());
 
             string output = node.CalculateOutput(input);
 
@@ -134,7 +134,7 @@ namespace NUnitTestProject1
             string input = "Off";
             string expected = "Off";
             OrGate node = new OrGate();
-            node.inputValues.Add(new OffValue().getValue());
+            node.inputValues.Add(new OffValue().GetValue());
 
             string output = node.CalculateOutput(input);
 
@@ -147,7 +147,7 @@ namespace NUnitTestProject1
             string input = "On";
             string expected = "On";
             OutputNode node = new OutputNode();
-            node.inputValues.Add(new OnValue().getValue());
+            node.inputValues.Add(new OnValue().GetValue());
 
             string output = node.CalculateOutput(input);
 
@@ -160,7 +160,7 @@ namespace NUnitTestProject1
             string input = "Off";
             string expected = "Off";
             OutputNode node = new OutputNode();
-            node.inputValues.Add(new OffValue().getValue());
+            node.inputValues.Add(new OffValue().GetValue());
 
             string output = node.CalculateOutput(input);
 
@@ -173,7 +173,7 @@ namespace NUnitTestProject1
             string input = "On";
             string expected = "On";
             XOrGate node = new XOrGate();
-            node.inputValues.Add(new OnValue().getValue());
+            node.inputValues.Add(new OnValue().GetValue());
 
             string output = node.CalculateOutput(input);
 
@@ -186,8 +186,8 @@ namespace NUnitTestProject1
             string input = "Off";
             string expected = "Off";
             XOrGate node = new XOrGate();
-            node.inputValues.Add(new OffValue().getValue());
-            node.inputValues.Add(new OnValue().getValue());
+            node.inputValues.Add(new OffValue().GetValue());
+            node.inputValues.Add(new OnValue().GetValue());
 
             string output = node.CalculateOutput(input);
 

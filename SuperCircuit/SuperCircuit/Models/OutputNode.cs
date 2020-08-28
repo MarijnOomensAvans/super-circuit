@@ -11,7 +11,7 @@ namespace SuperCircuit
         {
         }
 
-        public OutputNode(string name, NodeValue value) : base(name)
+        public OutputNode(string name, INodeValue value) : base(name)
         {
             this.Name = name;
             this.Value = value;
@@ -26,17 +26,17 @@ namespace SuperCircuit
             {
                 Value = new OffValue();
             }
-            Console.WriteLine(Name + " -- " + Value.getValue());
-            Console.WriteLine(Name + " has finished with status " + Value.getValue());
+            Console.WriteLine(Name + " -- " + Value.GetValue());
+            Console.WriteLine(Name + " has finished with status " + Value.GetValue());
             return value;
         }
 
         public override void Accept(HUDVisitor visitor)
         {
-            visitor.visit(this);
+            visitor.Visit(this);
         }
 
-        public override Node clone(string name, NodeValue value)
+        public override Node Clone(string name, INodeValue value)
         {
             return new OutputNode(name, value);
         }

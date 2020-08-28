@@ -5,13 +5,13 @@ using System.Text;
 
 namespace SuperCircuit.Visitor
 {
-    interface Visitor
+    interface IVisitor
     {
 
-        public void visit(InputNode v);
+        public void Visit(InputNode v);
 
-        public void visit(OutputNode v);
+        public void Visit(OutputNode v);
 
-        public void visit(Node v);
+        public void Visit(Node v);
     }
 }

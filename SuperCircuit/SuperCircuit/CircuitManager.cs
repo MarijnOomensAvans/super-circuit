@@ -8,6 +8,8 @@ namespace SuperCircuit
     {
 
         public bool valid = true;
+
+        //Circuitmanager is made with the facade pattern, the structure does not need to change.
         public CircuitManager()
         {
             this.getInput();

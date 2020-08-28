@@ -4,9 +4,9 @@ using System.Text;
 
 namespace SuperCircuit.Models
 {
-    public class NoneValue : NodeValue
+    public class NoneValue : INodeValue
     {
-        public string getValue()
+        public string GetValue()
         {
             return "none";
         }

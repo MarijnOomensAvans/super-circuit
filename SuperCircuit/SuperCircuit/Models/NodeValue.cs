@@ -1,7 +1,8 @@
 ﻿namespace SuperCircuit.Models
 {
-    public interface NodeValue
+    public interface INodeValue
     {
-        public string getValue();
+        //strategy pattern
+        public string GetValue();
     }
 }

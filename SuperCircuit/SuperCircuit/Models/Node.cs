@@ -5,6 +5,8 @@ namespace SuperCircuit.Models
 {
     public abstract class Node
     {
+        //The composite pattern is used with Node as the parent abstract class which can be inherited.
+        //Within this class it is possible to define a composite pattern in which the children classes can acces each other.
         public Node()
         {
 
@@ -17,7 +19,7 @@ namespace SuperCircuit.Models
 
         public abstract void Accept(HUDVisitor v);
 
-        public NodeValue Value { get; set; } = new NoneValue();
+        public INodeValue Value { get; set; } = new NoneValue();
 
         public List<string> inputValues = new List<string>();
 
@@ -27,8 +29,8 @@ namespace SuperCircuit.Models
 
         public string Name { get; set; }
 
-        //prototype, the class itself knows how to build itself
-        public abstract Node clone(string name, NodeValue value);
+        //this method uses the prototype pattern, the class itself knows how to build itself
+        public abstract Node Clone(string name, INodeValue value);
 
         //this is a method using the template pattern
         public abstract string CalculateOutput(string value);

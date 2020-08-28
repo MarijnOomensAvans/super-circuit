@@ -5,9 +5,9 @@ using System.Text;
 
 namespace SuperCircuit.Visitor
 {
-    public class HUDVisitor: Visitor
+    public class HUDVisitor: IVisitor
     {
-        public void visit(InputNode node)
+        public void Visit(InputNode node)
         {
             Console.WriteLine("Selected node: " + node.Name + ". This is an input node. Connected to:");
             foreach (var output in node.outputNodes)
@@ -16,12 +16,12 @@ namespace SuperCircuit.Visitor
             }
         }
 
-        public void visit(OutputNode node)
+        public void Visit(OutputNode node)
         {
             Console.WriteLine("Selected node: " + node.Name + ". The selected node is an output node, so it is not connected to any other nodes.");
         }
 
-        public void visit(Node node)
+        public void Visit(Node node)
         {
             Console.WriteLine("Selected node: " + node.Name);
             Console.WriteLine("Node " + node.Name + " is connected to:");

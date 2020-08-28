@@ -13,25 +13,25 @@ namespace SuperCircuit.Models
 
         }
 
-        public XOrGate(string name, NodeValue value) : base(name)
+        public XOrGate(string name, INodeValue value) : base(name)
         {
             this.Name = name;
             this.Value = value;
         }
         public override string CalculateOutput(string value)
         {
-            NodeValue nodeValue = new NoneValue();
-            string valueForHighCurrent = new NoneValue().getValue();
+            INodeValue nodeValue = new NoneValue();
+            string valueForHighCurrent = new NoneValue().GetValue();
 
             foreach (var node in inputValues)
             {
 
-                if (valueForHighCurrent == new NoneValue().getValue())
+                if (valueForHighCurrent == new NoneValue().GetValue())
                 {
                     valueForHighCurrent = node;
                     nodeValue = new OnValue();
                 }
-                else if (node == valueForHighCurrent && nodeValue.getValue() == "On")
+                else if (node == valueForHighCurrent && nodeValue.GetValue() == "On")
                 {
                     nodeValue = new OnValue();
                 }
@@ -42,16 +42,16 @@ namespace SuperCircuit.Models
 
             }
             Value = nodeValue;
-            Console.WriteLine(Name + " -- " + Value.getValue());
-            return nodeValue.getValue();
+            Console.WriteLine(Name + " -- " + Value.GetValue());
+            return nodeValue.GetValue();
         }
 
         public override void Accept(HUDVisitor visitor)
         {
-            visitor.visit(this);
+            visitor.Visit(this);
         }
 
-        public override Node clone(string name, NodeValue value)
+        public override Node Clone(string name, INodeValue value)
         {
             return new XOrGate(name, value);
         }

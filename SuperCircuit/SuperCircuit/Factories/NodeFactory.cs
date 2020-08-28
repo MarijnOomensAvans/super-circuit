@@ -17,7 +17,7 @@ namespace SuperCircuit.Factories
         public Node CreateNode(string nodeName, string nodeType)
         {
             Node n = _types[nodeType];
-            return n.clone(nodeName,n.Value);
+            return n.Clone(nodeName,n.Value);
         }
     }
 }
