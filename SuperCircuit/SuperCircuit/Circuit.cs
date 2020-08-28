@@ -75,7 +75,13 @@ namespace SuperCircuit
 
             foreach (var afterNode in connectedNodes)
             {
-                node.AddOutput(this.nodes.Where(n => n.Name == afterNode).First());
+                if (this.nodes.Where(n => n.Name == afterNode).FirstOrDefault() != null)
+                {
+                    node.AddOutput(this.nodes.Where(n => n.Name == afterNode).FirstOrDefault());
+                } else
+                {
+                    break;
+                }
             }
         }
     }
