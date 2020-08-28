@@ -32,14 +32,14 @@ namespace SuperCircuit
         {
             char x = 'x';
             ConsoleKeyInfo input;
-            while (x != '1' && x != '2' && x != '3' && x != '4' && x != '5' && x != (char)13)
+            while (x != '1' && x != '4' && x != '5' && x != (char)13)
             {
                 input = Console.ReadKey();
                 x = input.KeyChar;
                 Console.WriteLine();
-                if (x != '1' && x != '2' && x != '3' && x != '4' && x != '5' && x != (char)13)
+                if (x != '1' && x != '4' && x != '5' && x != (char)13)
                 {
-                    Console.WriteLine("Please type 1,2,3,4 or 5");
+                    Console.WriteLine("Please type 1,4 or 5");
                 }
                 if (x == (char)13)
                 {
